@@ -3,6 +3,7 @@ import { ARBITRUM, AVALANCHE, getAddress } from './addresses'
 const { JsonRpcProvider } = ethers.providers
 
 import GMXMarket from './../abis/GMXMarket.json'
+import GMXMarketTest from './../abis/GMXMarketTest.json'
 import GMX from './../abis/GMX.json'
 
 const providers = {
@@ -45,22 +46,27 @@ export const getGMXMarketListings = async chainName => {
     return GMXMarketContract.GetListings(10, 0)
 }
 
-function getGMXContract(chainName) {
+export const getGMXMarketListingData = async (chainName, address) => {
     const provider = getProvider(chainName)
     const chainId = getChainId(chainName)
-
-    const contract = new ethers.Contract(
-        getAddress(chainId, 'GMX'),
-        GMX.abi,
-        provider
+    const GMXMarketContract = new ethers.Contract(
+      '0x127Ae6502ea96ecF17F203F7357E7eF123Da487b',
+      GMXMarketTest.abi,
+      provider
     )
 
-    console.log(contract)
-
-    return contract
-}
-export const getBalanceOfGMX = async (chainName, address) => {
-    const contract = getGMXContract(chainName)
-
-    return contract.balanceOf(address)
+    return GMXMarketContract.GetGMXListingsData(address).then(res => {
+        return {
+            GMX_staked: res[0],
+            esGMX: res[1],
+            esGMX_staked: res[2],
+            max_esGMX_vestable_GMX: res[3],
+            max_esGMX_vestable_GLP: res[4],
+            GLP: res[5],
+            multiplier: res[6],
+            pending_ETH: res[7],
+            pending_esGMX: res[8],
+            pending_multiplier: res[9],
+        }
+    })
 }
