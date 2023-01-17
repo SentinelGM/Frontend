@@ -1,0 +1,172 @@
+{
+    "_format": "hh-sol-artifact-1",
+    "contractName": "GMXMarket",
+    "address": "0x1581334536FdF4f7Aa5ED3E0583bBeE3ac604932",
+    "abi": [
+        {
+            "inputs": [
+                {
+                    "internalType": "address payable",
+                    "name": "_Address",
+                    "type": "address"
+                }
+            ],
+            "name": "Deploy",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "Address",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "Deploy",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "Address",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "Vault",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "VaultOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "DeployedVault",
+            "type": "event"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_Address",
+                    "type": "address"
+                }
+            ],
+            "name": "ResetCloseVault",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "SelfDestruct",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        { "stateMutability": "payable", "type": "fallback" },
+        {
+            "inputs": [],
+            "name": "WithdrawETH",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_tokenaddress",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_Amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "WithdrawToken",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        { "stateMutability": "payable", "type": "receive" },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_Limit",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_Offset",
+                    "type": "uint256"
+                }
+            ],
+            "name": "GetListings",
+            "outputs": [
+                { "internalType": "address[]", "name": "", "type": "address[]" }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "Owner",
+            "outputs": [
+                { "internalType": "address", "name": "", "type": "address" }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                { "internalType": "uint256", "name": "", "type": "uint256" }
+            ],
+            "name": "VaultKeys",
+            "outputs": [
+                { "internalType": "address", "name": "", "type": "address" }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                { "internalType": "address", "name": "", "type": "address" }
+            ],
+            "name": "Vaults",
+            "outputs": [
+                { "internalType": "address", "name": "", "type": "address" }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                { "internalType": "address", "name": "", "type": "address" }
+            ],
+            "name": "VaultsToOwners",
+            "outputs": [
+                { "internalType": "address", "name": "", "type": "address" }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        }
+    ]
+}
