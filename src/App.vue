@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup>
 import MainNavigation from './layout/MainNavigation.vue'
 import { getGMXMarketListings, getGMXMarketListingData } from "./dataProvider.js";
 import truncate from 'lodash/truncate'
